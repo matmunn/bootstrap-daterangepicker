@@ -51,6 +51,7 @@
         this.autoUpdateInput = true;
         this.alwaysShowCalendars = false;
         this.ranges = {};
+        this.disabledHours = [];
 
         this.opens = 'right';
         if (this.element.hasClass('pull-right'))
@@ -271,6 +272,9 @@
 
         if (typeof options.alwaysShowCalendars === 'boolean')
             this.alwaysShowCalendars = options.alwaysShowCalendars;
+
+        if (typeof options.disabledHours === 'object')
+            this.disabledHours = options.disabledHours
 
         // update day names order to firstDay
         if (this.locale.firstDay != 0) {
@@ -922,13 +926,15 @@
                     disabled = true;
                 if (maxDate && time.minute(0).isAfter(maxDate))
                     disabled = true;
-
-                if (i_in_24 == selected.hour() && !disabled) {
-                    html += '<option value="' + i + '" selected="selected">' + i + '</option>';
-                } else if (disabled) {
-                    html += '<option value="' + i + '" disabled="disabled" class="disabled">' + i + '</option>';
-                } else {
-                    html += '<option value="' + i + '">' + i + '</option>';
+                console.log("Mat's version")
+                if (!this.timePicker24Hour || (this.timePicker24Hour && this.disabledHours.indexOf(i_in_24) === -1)) {
+                    if (i_in_24 == selected.hour() && !disabled) {
+                        html += '<option value="' + i + '" selected="selected">' + i + '</option>';
+                    } else if (disabled) {
+                        html += '<option value="' + i + '" disabled="disabled" class="disabled">' + i + '</option>';
+                    } else {
+                        html += '<option value="' + i + '">' + i + '</option>';
+                    }
                 }
             }
 

@@ -1,7 +1,7 @@
 {
-  "name": "bootstrap-daterangepicker",
-  "version": "2.1.25",
-  "description": "Date range picker component for Bootstrap",
+  "name": "savi-bootstrap-daterangepicker",
+  "version": "1.0.0",
+  "description": "Customnised date range picker component for Bootstrap",
   "main": "daterangepicker.js",
   "style": "daterangepicker.css",
   "scripts": {
@@ -10,18 +10,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dangrossman/bootstrap-daterangepicker.git"
+    "url": "https://github.com/matmunn/bootstrap-daterangepicker.git"
   },
   "author": {
-    "name": "Dan Grossman",
-    "email": "dan@dangrossman.info",
-    "url": "http://www.dangrossman.info"
+    "name": "Mat Munn",
+    "email": "mat@savi.com.au",
+    "url": "http://www.savi.com.au"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dangrossman/bootstrap-daterangepicker/issues"
+    "url": "https://github.com/matmunn/bootstrap-daterangepicker/issues"
   },
-  "homepage": "https://github.com/dangrossman/bootstrap-daterangepicker",
+  "homepage": "https://github.com/matmunn/bootstrap-daterangepicker",
   "dependencies": {
     "jquery": ">=1.10",
     "moment": "^2.9.0"
