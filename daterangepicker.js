@@ -926,7 +926,7 @@
                     disabled = true;
                 if (maxDate && time.minute(0).isAfter(maxDate))
                     disabled = true;
-                console.log("Mat's version")
+                
                 if (!this.timePicker24Hour || (this.timePicker24Hour && this.disabledHours.indexOf(i_in_24) === -1)) {
                     if (i_in_24 == selected.hour() && !disabled) {
                         html += '<option value="' + i + '" selected="selected">' + i + '</option>';
