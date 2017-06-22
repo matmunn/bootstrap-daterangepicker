@@ -121,18 +121,18 @@
     color: #999;
     cursor: not-allowed;
     text-decoration: line-through; }
-  .daterangepicker select.monthselect, .daterangepicker select.yearselect {
+  .daterangepicker .select.monthselectspan, .daterangepicker .select.yearselectspan {
     font-size: 12px;
     padding: 1px;
     height: auto;
     margin: 0;
     cursor: default; }
-  .daterangepicker select.monthselect {
+  .daterangepicker .select.monthselectspan {
     margin-right: 2%;
     width: 56%; }
-  .daterangepicker select.yearselect {
+  .daterangepicker .select.yearselectspan {
     width: 40%; }
-  .daterangepicker select.hourselect, .daterangepicker select.minuteselect, .daterangepicker select.secondselect, .daterangepicker select.ampmselect {
+  .daterangepicker .select.hourselectspan, .daterangepicker .select.minuteselectspan, .daterangepicker .select.secondselectspan, .daterangepicker .select.ampmselectspan {
     width: 50px;
     margin-bottom: 0; }
   .daterangepicker .input-mini {
@@ -258,6 +258,7 @@
       .daterangepicker.rtl .ranges, .daterangepicker.rtl .calendar {
         text-align: right;
         float: right; } }
+
 @media (min-width: 730px) {
   .daterangepicker .ranges {
     width: auto; }
@@ -267,3 +268,4 @@
     float: right; }
   .daterangepicker .calendar.left {
     clear: none !important; } }
+
