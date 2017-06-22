@@ -1,6 +1,6 @@
 {
   "name": "savi-bootstrap-daterangepicker",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Customnised date range picker component for Bootstrap",
   "main": "daterangepicker.js",
   "style": "daterangepicker.css",
