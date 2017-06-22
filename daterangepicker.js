@@ -61,9 +61,9 @@
         if (this.element.hasClass('dropup'))
             this.drops = 'up';
 
-        this.buttonClasses = 'btn btn-sm';
-        this.applyClass = 'btn-success';
-        this.cancelClass = 'btn-default';
+        this.buttonClasses = 'button';
+        this.applyClass = 'is-success';
+        this.cancelClass = '';
 
         this.locale = {
             direction: 'ltr',
@@ -76,6 +76,13 @@
             daysOfWeek: moment.weekdaysMin(),
             monthNames: moment.monthsShort(),
             firstDay: moment.localeData().firstDayOfWeek()
+        };
+
+        this.icons = {
+            calendar: '<i class="fa fa-calendar glyphicon glyphicon-calendar"></i>',
+            clock: '<i class="fa fa-clock-o glyphicon glyphicon-time"></i>',
+            arrowLeft: '<i class="fa fa-chevron-left glyphicon glyphicon-chevron-left"></i>',
+            arrowRight: '<i class="fa fa-chevron-right glyphicon glyphicon-chevron-right"></i>'
         };
 
         this.callback = function() { };
@@ -93,27 +100,42 @@
         //data-api options will be overwritten with custom javascript options
         options = $.extend(this.element.data(), options);
 
+        if (typeof options.icons === 'object') {
+
+            if (typeof options.icons.calendar === 'string')
+                this.icons.calendar = options.icons.calendar;
+
+            if (typeof options.icons.clock === 'string')
+                this.icons.clock = options.icons.clock;
+
+            if (typeof options.icons.arrowLeft === 'string')
+                this.icons.arrowLeft = options.icons.arrowLeft;
+
+            if (typeof options.icons.arrowRight === 'string')
+                this.icons.arrowRight = options.icons.arrowRight;
+        }
+
         //html template for the picker UI
         if (typeof options.template !== 'string' && !(options.template instanceof $))
-            options.template = '<div class="daterangepicker dropdown-menu">' +
+            options.template = '<div class="daterangepicker dropdown-menu box">' +
                 '<div class="calendar left">' +
                     '<div class="daterangepicker_input">' +
-                      '<input class="input-mini form-control" type="text" name="daterangepicker_start" value="" />' +
-                      '<i class="fa fa-calendar glyphicon glyphicon-calendar"></i>' +
+                      '<input class="input" type="text" name="daterangepicker_start" value="" />' +
+                      this.icons.calendar +
                       '<div class="calendar-time">' +
                         '<div></div>' +
-                        '<i class="fa fa-clock-o glyphicon glyphicon-time"></i>' +
+                        this.icons.clock +
                       '</div>' +
                     '</div>' +
                     '<div class="calendar-table"></div>' +
                 '</div>' +
                 '<div class="calendar right">' +
                     '<div class="daterangepicker_input">' +
-                      '<input class="input-mini form-control" type="text" name="daterangepicker_end" value="" />' +
-                      '<i class="fa fa-calendar glyphicon glyphicon-calendar"></i>' +
+                      '<input class="input" type="text" name="daterangepicker_end" value="" />' +
+                      this.icons.calendar +
                       '<div class="calendar-time">' +
                         '<div></div>' +
-                        '<i class="fa fa-clock-o glyphicon glyphicon-time"></i>' +
+                        this.icons.clock +
                       '</div>' +
                     '</div>' +
                     '<div class="calendar-table"></div>' +
