@@ -748,7 +748,7 @@
                 var inMinYear = currentYear == minYear;
                 var inMaxYear = currentYear == maxYear;
 
-                var monthHtml = '<select class="monthselect">';
+                var monthHtml = '<span class="monthselectspan select is-small is-fullwidth"><select class="monthselect">';
                 for (var m = 0; m < 12; m++) {
                     if ((!inMinYear || m >= minDate.month()) && (!inMaxYear || m <= maxDate.month())) {
                         monthHtml += "<option value='" + m + "'" +
@@ -760,15 +760,15 @@
                             " disabled='disabled'>" + this.locale.monthNames[m] + "</option>";
                     }
                 }
-                monthHtml += "</select>";
+                monthHtml += "</select></span>";
 
-                var yearHtml = '<select class="yearselect">';
+                var yearHtml = '<span class="yearselectspan select is-small is-fullwidth"><select class="yearselect">';
                 for (var y = minYear; y <= maxYear; y++) {
                     yearHtml += '<option value="' + y + '"' +
                         (y === currentYear ? ' selected="selected"' : '') +
                         '>' + y + '</option>';
                 }
-                yearHtml += '</select>';
+                yearHtml += '</select></span>';
 
                 dateHtml = monthHtml + yearHtml;
             }
@@ -932,7 +932,7 @@
             // hours
             //
 
-            html = '<select class="hourselect">';
+            html = '<span class="hourselectspan select is-small"><select class="hourselect">';
 
             var start = this.timePicker24Hour ? 0 : 1;
             var end = this.timePicker24Hour ? 23 : 12;
@@ -960,13 +960,13 @@
                 }
             }
 
-            html += '</select> ';
+            html += '</select></span> ';
 
             //
             // minutes
             //
 
-            html += ': <select class="minuteselect">';
+            html += ': <span class="minuteselectspan select is-small"><select class="minuteselect">';
 
             for (var i = 0; i < 60; i += this.timePickerIncrement) {
                 var padded = i < 10 ? '0' + i : i;
@@ -987,14 +987,14 @@
                 }
             }
 
-            html += '</select> ';
+            html += '</select></span> ';
 
             //
             // seconds
             //
 
             if (this.timePickerSeconds) {
-                html += ': <select class="secondselect">';
+                html += ': <span class="secondselectspan select is-small"><select class="secondselect">';
 
                 for (var i = 0; i < 60; i++) {
                     var padded = i < 10 ? '0' + i : i;
@@ -1015,7 +1015,7 @@
                     }
                 }
 
-                html += '</select> ';
+                html += '</select></span> ';
             }
 
             //
@@ -1023,7 +1023,7 @@
             //
 
             if (!this.timePicker24Hour) {
-                html += '<select class="ampmselect">';
+                html += '<span class="ampmselectspan select is-small"><select class="ampmselect">';
 
                 var am_html = '';
                 var pm_html = '';
@@ -1040,7 +1040,7 @@
                     html += '<option value="AM" selected="selected"' + am_html + '>AM</option><option value="PM"' + pm_html + '>PM</option>';
                 }
 
-                html += '</select>';
+                html += '</select></span>';
             }
 
             this.container.find('.calendar.' + side + ' .calendar-time div').html(html);

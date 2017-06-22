@@ -345,8 +345,8 @@ $daterangepicker-ranges-active-border-radius: $daterangepicker-border-radius !de
     }
   }
 
-  select {
-    &.monthselect, &.yearselect {
+  .select {
+    &.monthselectspan, &.yearselectspan {
       font-size: 12px;
       padding: 1px;
       height: auto;
@@ -354,16 +354,16 @@ $daterangepicker-ranges-active-border-radius: $daterangepicker-border-radius !de
       cursor: default;
     }
 
-    &.monthselect {
+    &.monthselectspan {
       margin-right: 2%;
       width: 56%;
     }
 
-    &.yearselect {
+    &.yearselectspan {
       width: 40%;
     }
 
-    &.hourselect, &.minuteselect, &.secondselect, &.ampmselect {
+    &.hourselectspan, &.minuteselectspan, &.secondselectspan, &.ampmselectspan {
       width: 50px;
       margin-bottom: 0;
     }
